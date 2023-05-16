@@ -3,7 +3,7 @@ import style from "./Card.module.css";
 
 
 //hola
-export default function Card({name, status, species, gender, origin, image, onClose}) {
+export default function Card({id, name, status, species, gender, origin, image, onClose}) {
 /*    return (
       <div>
          
@@ -18,15 +18,13 @@ export default function Card({name, status, species, gender, origin, image, onCl
    ) */
 
 
-   const handleClose = () => {
-      onClose();
-    };
+
   
     return (
       <div>
          <div className={style.conteiner}>
             <div className={style.conteiner2}>
-            <button className={style.button} onClick={handleClose}>
+            <button className={style.button} onClick={() => {onClose(id)}}>
              X
             </button>
             <img className={style.img} src={image} alt={`${name}`}/>
