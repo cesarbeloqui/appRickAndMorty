@@ -4,22 +4,24 @@
     border-radius: 4px;
     padding: 10px;
     margin: 20px;
-    background-color: 	#547c1c;
+    background-color: 	#547c1ca6;
  }
  .conteiner2 {
     position:relative;
     width: 100%;
     padding: 5%;
-    background-color: #97ce4c;
+    background-color: #98ce4c94;
     margin: 0px;
  }
 
  .button {
     position: absolute;
+    border-radius: 10px;
+    border:none;
     top: 5%;
     right: 5%;
     z-index: index 1;
-    background-color: #1c7c2c;
+    background-color: #1c7c2cc0;
     font-size: 10px;
  }
 
@@ -36,6 +38,7 @@
     left: 0;
     background-color:rgb(238, 255, 0);
     margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 7%;
     padding: 1%;
     font-size: 100%;
@@ -45,8 +48,9 @@
   .datos {
     position:relative;
     width: 100%;
+    height: 125px;
     padding: 5%;
-    background-color: #e4a788;
+    background-color: #e4a788a6;
     margin-top: 5%;
 
  }

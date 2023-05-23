@@ -3,6 +3,10 @@ import "./components/Body/body.css";
 import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav";
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import About from "./components/About/About";
+import Detail from "./components/Detail/Detail";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -33,7 +37,20 @@ function App() {
   return (
     <div className="App">
       <Nav onSearch={onSearch} deleteAll={deleteAll} />
-      <Cards characters={characters} onClose={onClose} />
+      <Routes>
+        <Route
+          path="/home"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route
+        path="/"
+        element={<Cards characters={characters} onClose={onClose} />}
+        exact
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
