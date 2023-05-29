@@ -3,14 +3,33 @@ import "./components/Body/body.css";
 import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav";
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import NotFound from "./components/NotFound/NotFound";
+import Form from "./components/Form/Form";
+import { useEffect } from "react";
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
+  const EMAIL = "123@123.123";
+  const CONTRASEÑA = "123456";
+  useEffect(() => {
+    !access && navigate("/");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [access]);
 
+  function login(userData) {
+    if (userData.email === EMAIL && userData.password === CONTRASEÑA) {
+      setAccess(true);
+      navigate("/home");
+    }
+  }
+  function logout() {
+    setAccess(false);
+  }
   const deleteAll = () => {
     setCharacters([]);
   };
@@ -33,20 +52,20 @@ function App() {
   const onClose = (id) => {
     setCharacters(characters.filter((character) => character.id !== id));
   };
+  const validation = useLocation().pathname;
+  console.log(validation);
 
   return (
     <div className="App">
-      <Nav onSearch={onSearch} deleteAll={deleteAll} />
+      {validation !== "/" && (
+        <Nav onSearch={onSearch} deleteAll={deleteAll} logout={logout} />
+      )}
       <Routes>
         <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}
         />
-        <Route
-        path="/"
-        element={<Cards characters={characters} onClose={onClose} />}
-        exact
-        />
+        <Route path="/" element={<Form login={login} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<NotFound />} />

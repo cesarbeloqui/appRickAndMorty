@@ -18,6 +18,11 @@ const Nav = (props) => {
           <button className="btn btn-primary mb-3">Home</button>
         </Link>
       </div>
+      <div className="col-auto">
+        <button className="btn btn-primary mb-3" onClick={props.logout}>
+          Logout
+        </button>
+      </div>
       <div className={`col-auto ${style.search}`}>
         <SearchBar onSearch={props.onSearch} deleteAll={props.deleteAll} />
       </div>
