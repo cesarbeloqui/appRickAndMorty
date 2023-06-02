@@ -9,13 +9,14 @@ import Detail from "./components/Detail/Detail";
 import NotFound from "./components/NotFound/NotFound";
 import Form from "./components/Form/Form";
 import { useEffect } from "react";
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  const EMAIL = "123@123.123";
-  const CONTRASEÑA = "123456";
+  const EMAIL = "";
+  const CONTRASEÑA = "";
   useEffect(() => {
     !access && navigate("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,7 +54,6 @@ function App() {
     setCharacters(characters.filter((character) => character.id !== id));
   };
   const validation = useLocation().pathname;
-  console.log(validation);
 
   return (
     <div className="App">
@@ -67,6 +67,7 @@ function App() {
         />
         <Route path="/" element={<Form login={login} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

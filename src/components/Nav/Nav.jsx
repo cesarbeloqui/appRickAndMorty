@@ -19,6 +19,11 @@ const Nav = (props) => {
         </Link>
       </div>
       <div className="col-auto">
+        <Link to="/favorites">
+          <button className="btn btn-primary mb-3">Favorites</button>
+        </Link>
+      </div>
+      <div className="col-auto">
         <button className="btn btn-primary mb-3" onClick={props.logout}>
           Logout
         </button>
