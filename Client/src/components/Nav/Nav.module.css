@@ -1,0 +1,9 @@
+.div {
+    margin: 20px;
+    position: relative;
+}
+
+.search {
+    position: absolute;
+    right: 0px;
+  }
