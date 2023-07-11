@@ -19,6 +19,7 @@
 }
 .rojo {
     color: red;
+    background-color: rgba(255, 255, 255);
 }
 .verde {
     color: green;

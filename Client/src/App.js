@@ -11,6 +11,7 @@ import Form from "./components/Form/Form";
 import { useEffect } from "react";
 import Favorites from "./components/Favorites/Favorites";
 import axios from "axios";
+import { BASE_URL } from "./falseEnv";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -23,7 +24,7 @@ function App() {
 
   async function login(userData) {
     const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
+    const URL = `${BASE_URL}/rickandmorty/login/`;
     // axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
     //   const { access } = data;
     //   setAccess(data);

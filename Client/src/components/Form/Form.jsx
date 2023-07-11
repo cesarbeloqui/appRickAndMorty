@@ -57,7 +57,10 @@ const Form = ({ login }) => {
         <button className="btn btn-primary mb-3" onClick={handleSubmit}>
           Submit
         </button>
-       
+        <p className={`${styles.rojo}`}>
+          ATENCION para ingresar a la aplicacion solo ingresa en email: ccc y en
+          constraseña: ccc y apretar submit
+        </p>
       </form>
     </div>
   );
