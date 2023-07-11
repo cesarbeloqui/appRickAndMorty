@@ -57,6 +57,7 @@ const Form = ({ login }) => {
         <button className="btn btn-primary mb-3" onClick={handleSubmit}>
           Submit
         </button>
+        <p>ATENCION para ingresar a la aplicacion solo es necesario dejar los campos vacios y apretar submit<p/>
       </form>
     </div>
   );
