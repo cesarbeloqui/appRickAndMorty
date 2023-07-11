@@ -49,7 +49,7 @@ function App() {
   };
 
   const onSearch = async (id) => {
-    const URL_BASE = "http://localhost:3001/rickandmorty";
+    const URL_BASE = `${BASE_URL}/rickandmorty`;
     const ID = id;
     // fetch(`${URL_BASE}/character/${id}`)
     //   .then((response) => response.json())
